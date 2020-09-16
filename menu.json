@@ -1,0 +1,20 @@
+{
+    "items": [
+        {
+            "name": "HTTP File Server",
+            "items": [
+                {
+                    "name": "Please install kterm extension",
+                    "if": "\"kterm\" -ext!",
+                    "action": ""
+                },
+                {
+                    "name": "Start Server",
+                    "if": "\"kterm\" -ext",
+                    "action": "sh start_server.sh",
+                    "exitmenu": false
+                }
+            ]
+        }
+    ]
+}
