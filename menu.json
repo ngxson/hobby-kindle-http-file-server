@@ -13,6 +13,12 @@
                     "if": "\"kterm\" -ext",
                     "action": "sh start_server.sh",
                     "exitmenu": false
+                },
+                {
+                    "name": "Enable Wifi",
+                    "if": "\"kterm\" -ext",
+                    "action": "lipc-set-prop com.lab126.cmd wirelessEnable 1",
+                    "exitmenu": false
                 }
             ]
         }
