@@ -4,19 +4,22 @@
             "name": "HTTP File Server",
             "items": [
                 {
-                    "name": "Please install kterm extension",
-                    "if": "\"kterm\" -ext!",
-                    "action": ""
+                    "name": "Start HTTP File Server",
+                    "action": "sh /mnt/us/extensions/filebrowser/start_server.sh",
+                    "exitmenu": false
                 },
                 {
-                    "name": "Start Server",
-                    "if": "\"kterm\" -ext",
-                    "action": "sh start_server.sh",
+                    "name": "Stop HTTP File Server",
+                    "action": "/mnt/us/extensions/filebrowser/stop_server.sh",
+                    "exitmenu": false
+                },
+                {
+                    "name": "Show status",
+                    "action": "/mnt/us/extensions/filebrowser/show_status.sh",
                     "exitmenu": false
                 },
                 {
                     "name": "Enable Wifi",
-                    "if": "\"kterm\" -ext",
                     "action": "lipc-set-prop com.lab126.cmd wirelessEnable 1",
                     "exitmenu": false
                 }

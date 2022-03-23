@@ -1,3 +1,14 @@
 #!/bin/sh
 
-/mnt/us/extensions/kterm/bin/kterm -e "bash /mnt/us/extensions/filebrowser/server.sh" -k 1 -o U -s 7
+# kill the server if it is running
+for pid in $(ps -ef | grep "fileserver" | awk '{print $2}'); do kill -9 $pid; done
+
+# start the server
+/usr/sbin/eips 11 32 "Starting..."
+sleep 1
+
+chmod a+x /mnt/us/extensions/filebrowser/fileserver
+chmod a+x /mnt/us/extensions/filebrowser/server.sh
+/mnt/us/extensions/filebrowser/server.sh
+
+/usr/sbin/eips 11 33 "HTTP Server started"

@@ -1,21 +1,6 @@
 #!/bin/sh
 
-myip="$(ifconfig | grep -A 1 'wlan0' | tail -1 | cut -d ':' -f 2 | cut -d ' ' -f 1)"
+rm /mnt/us/extensions/filebrowser/log.txt
+touch /mnt/us/extensions/filebrowser/log.txt
 
-echo ""
-echo ""
-
-iptables -I INPUT -p tcp --dport 80 -j ACCEPT
-
-if [ -z "$myip" ]
-then
-  echo "Cannot find your IP. Please make sure that you are connecting to a Wifi network"
-  echo ""
-else
-  echo "Connect your PC/Mobile to wifi and access to:"
-  echo ""
-  echo "              http://$myip"
-  echo ""
-  (sleep 1; echo ""; echo ""; /mnt/us/extensions/filebrowser/filebrowser -a 0.0.0.0 -p 80 -r "/mnt/us") &
-fi
-read -n 1 -s -r -p "Press any key to stop"
+(/mnt/us/extensions/filebrowser/fileserver -a 0.0.0.0 -p 80 -r "/mnt/us" -l "/mnt/us/extensions/filebrowser/log.txt" 1> /dev/null 2> /dev/null)&
