@@ -16,12 +16,11 @@ Link to download KUAL extension (you just need to extract and place it under `/e
 - Open KUAL > HTTP File Server > Start Server
 - Access kindle's IP address from a browser on your laptop/PC/Mobile/...
 - The default username/password is admin/admin. You can change it by going to "Settings" section on web interface.
-- When you're done, press any key on kindle, the application should exit
 
 ### TODO
 
 - ~~Show IP address~~
-- Ability run on the background
+- ~~Ability run on the background~~
 
 ## Notes
 
