@@ -5,6 +5,7 @@ for pid in $(ps -ef | grep "fileserver" | awk '{print $2}'); do kill -9 $pid; do
 
 # start the server
 /usr/sbin/eips 11 32 "Starting..."
+iptables -I INPUT -p tcp --dport 80 -j ACCEPT
 sleep 1
 
 chmod a+x /mnt/us/extensions/filebrowser/fileserver
