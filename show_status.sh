@@ -6,7 +6,7 @@ if [ -z "$myip" ]
 then
   /usr/sbin/eips 11 32 "No Wifi connection detected"
 else
-  /usr/sbin/eips 11 32 "Current address: http://$myip"
+  /usr/sbin/eips 11 32 "Visit: http://$myip"
 fi
 
 #check if fileserver is running
